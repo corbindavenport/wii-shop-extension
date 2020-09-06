@@ -1,0 +1,14 @@
+html {
+    background-color: #14B4E9;
+}
+
+label,
+option {
+    font-family: sans-serif;
+}
+
+label {
+    color: white;
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
