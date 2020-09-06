@@ -6,30 +6,62 @@ if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
         title: 'Wii Shop Channel Theme',
         artist: 'Nintendo',
-        artwork: [
-            { src: shopIcon, sizes: '128x128', type: 'image/png' }
-        ]
+        artwork: [{
+            src: shopIcon,
+            sizes: '128x128',
+            type: 'image/png'
+        }]
     })
 }
 
-// Creat audio object
-var themeAudio = new Audio(chrome.extension.getURL('wii-shop-theme.ogg'))
-themeAudio.volume = 0.5
-themeAudio.loop = true
+var currentSong = ''
+
+// Create audio object
+themeAudio = null;
+setAudio('wii-shop-theme')
 
 // Detect new page loads in active tab, if the domain matches a shopping site, play music
-chrome.tabs.onUpdated.addListener(function (tabId, changeInfo) {
-        chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
-            var url = new URL(tabs[0].url)
-            var domain = url.hostname.toString().replace('www.','')
-            console.log(domain)
-            if (siteList.includes(domain)) {
-                themeAudio.play()
-            } else {
-                themeAudio.pause()
-            }
-        })
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
+    updateSongPlayStatus()
 })
+
+function updateSongPlayStatus() {
+    chrome.tabs.query({
+        active: true,
+        lastFocusedWindow: true
+    }, function(tabs) {
+        var url = new URL(tabs[0].url)
+        var domain = url.hostname.toString().replace('www.', '')
+        // console.log(domain)
+        if (siteList.includes(domain)) {
+            themeAudio.play()
+        } else {
+            themeAudio.pause()
+        }
+    })
+}
+
+function setAudio(songName) {
+    currentSong = songName
+    // TODO: Fix creating new Audio objects every time you switch songs.
+    // Perhaps a dictionary/enum where strings are linked to Audio objects?
+    // Sadly I have only just finished my first year of IT without any js classes, only java, so unsure how 😅
+    themeAudio = new Audio(chrome.extension.getURL(songName + '.ogg'))
+    themeAudio.volume = 0.5
+    themeAudio.loop = true
+}
+
+function getCurrentSong() {
+    return currentSong
+}
+
+function replaceAudio(songName) {
+    themeAudio.pause()
+    themeAudio.currentTime = 0
+
+    setAudio(songName)
+    updateSongPlayStatus()
+}
 
 // Show notification on extension install
 chrome.runtime.onInstalled.addListener(function() {
@@ -38,5 +70,5 @@ chrome.runtime.onInstalled.addListener(function() {
         'iconUrl': chrome.extension.getURL('img/icon128.png'),
         'title': 'Wii Shop Music extension installed!',
         'message': 'The Wii Shop theme will now play when you visit shopping websites.'
-      })
+    })
 })
