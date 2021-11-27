@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            width: 300px;
+        }
+
+        body {
+            margin: 0;
+            padding: 5px;
+        }
+
+        body, input, select, button {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+
+        .picker {
+            width: calc(100% - 10px);
+            overflow: auto;
+            border: 5px solid #34bfed;
+            /* background: linear-gradient(to bottom, #afe7f6 0%, #b0e4f9 1%, #b9e8f8 14%, #dbf3fd 43%, #e8f7fe 53%, #f7ffff 71%, #f2fdff 88%, #f0fbff 89%, #ebf7fa 90%, #e5f3f6 92%, #e5f2fa 94%, #e0f1f5 95%, #dff1f3 96%, #e4eff3 97%, #e1f0f3 98%, #e0edf6 99%, #ddeff2 100%); */
+            outline: none;
+        }
+
+        .picker option:active {
+            color: red;
+        }
+
+        button {
+            margin-top: 10px;
+            height: 40px;
+            width: calc(100% - 10px);
+            border: 1px solid #34bfed;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #f5fafe 0%,#fdfdfe 7%,#f2fdff 81%,#e8f3f8 86%,#e7f2f6 89%,#e4f0f3 93%,#ddeff0 100%);
+        }
+
+        button:active {
+            background: linear-gradient(to top, #f5fafe 0%,#fdfdfe 7%,#f2fdff 81%,#e8f3f8 86%,#e7f2f6 89%,#e4f0f3 93%,#ddeff0 100%);
+        }
+
+        header {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>Music Picker</header>
+    <select id="music-picker" multiple size="5" class="picker">
+        <option value="wii-shop-theme">Wii Shop Channel</option>
+        <option value="wii-shop-banner-theme">Wii Shop Channel (Menu)</option>
+        <option value="wii-u-eshop-theme">Wii U eShop</option>
+        <option value="3ds-eshop-theme">3DS eShop</option>
+        <option value="dsi-shop-theme">DSi Shop</option>
+        <option value="coconut-mall">Coconut Mall</option>
+    </select>
+
+    <input id="reset-music" type="checkbox"/>
+    <label for="reset-music">Reset on tab exit</label>
+
+    <button data-link="https://discord.com/invite/59wfy5cNHw">Join Discord server</button>
+
+    <script src="/src/js/popup.js"></script>
+</body>
+</html>

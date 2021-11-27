@@ -7,14 +7,21 @@
 	"homepage_url": "https://github.com/corbindavenport/wii-shop-extension",
 	"permissions": [
 		"tabs",
-		"notifications"
+		"notifications",
+		"storage"
 	],
 	"web_accessible_resources": [
+		"music/*.ogg",
     "data/public_suffix_list.dat"
 	],
 	"background": {
 		"page": "src/html/background.html"
 	},
+	"browser_action": {
+        "default_icon": "src/img/icon48.png",
+        "default_popup": "src/html/popup.html",
+        "default_title": "Wii Shop Channel Music"
+    },
 	"icons": {
 		"48": "src/img/icon48.png",
 		"128": "src/img/icon128.png"
