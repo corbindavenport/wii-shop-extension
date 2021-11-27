@@ -1,4 +1,4 @@
-const siteList = [
+export let siteList = [
     'amazon.com',
     'amazon.com.au',
     'amazon.com.br',
@@ -36,7 +36,7 @@ const siteList = [
     'ebay.at',
     'ebay.be',
     'ebay.ca',
-    'ebay.com.cn',
+    'ebay.cn',
     'ebay.fr',
     'ebay.de',
     'ebay.it',
@@ -66,5 +66,12 @@ const siteList = [
     'azerty.nl',
     'marktplaats.nl',
     'mediamarkt.nl',
-    'zehrs.ca'
+    'zehrs.ca',
+    'nintendo.com',
+    'nintendo.co.uk',
+    'nintendo.co.jp',
+    'sephora.com',
+    'gamestop.ca',
+    'gamestop.com',
+    'steampowered.com'
 ]

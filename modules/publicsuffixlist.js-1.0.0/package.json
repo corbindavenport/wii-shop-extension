@@ -1,0 +1,28 @@
+{
+  "name": "publicsuffixlist",
+  "version": "1.0.0",
+  "description": "Javascript utility to handle Public Suffix List from Mozilla Foundation",
+  "main": "publicsuffixlist.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gorhill/publicsuffixlist.js"
+  },
+  "keywords": [
+    "dns",
+    "domains",
+    "publicsuffixlist",
+    "url"
+  ],
+  "author": "Raymond Hill",
+  "license": "APL V2 or GPL V3",
+  "bugs": {
+    "url": "https://github.com/gorhill/publicsuffixlist.js/issues"
+  },
+  "homepage": "https://github.com/gorhill/publicsuffixlist.js"
+}
