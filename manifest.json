@@ -15,12 +15,6 @@
 	"background": {
 		"page": "src/html/background.html"
 	},
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["src/js/content_script.js"]
-		}
-	],
 	"icons": {
 		"48": "src/img/icon48.png",
 		"128": "src/img/icon128.png"
