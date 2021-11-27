@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Wii Shop Channel Music",
-	"version": "1.1",
+	"version": "1.2",
 	"author": "Corbin Davenport",
 	"description": "Plays the Wii Shop theme when you visit shopping websites.",
 	"homepage_url": "https://github.com/corbindavenport/wii-shop-extension",
@@ -9,14 +9,14 @@
 		"tabs",
 		"notifications"
 	],
+	"web_accessible_resources": [
+    "data/public_suffix_list.dat"
+	],
 	"background": {
-		"scripts": [
-			"js/site-list.js",
-			"js/background.js"
-		]
+		"page": "src/html/background.html"
 	},
 	"icons": {
-		"48": "img/icon48.png",
-		"128": "img/icon128.png"
+		"48": "src/img/icon48.png",
+		"128": "src/img/icon128.png"
 	}
 }
