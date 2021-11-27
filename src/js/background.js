@@ -22,14 +22,24 @@ let themeAudio = new Audio(chrome.extension.getURL('wii-shop-theme.ogg'))
 themeAudio.volume = 0.5
 themeAudio.loop = true
 
+
 // Function for checking if music should be playing in current tab
-function checkMusic(tabs) {
-    let domain = getDomain(tabs)
-    if (siteList.includes(domain)) {
-        themeAudio.play()
-    } else {
-        themeAudio.pause()
+// if `resetMusic` is set to true, music will restart upon re-entering the tab, defaults true
+function checkMusic(tabs, resetMusic = true) {
+  let domain = getDomain(tabs)
+  if (siteList.includes(domain)) {
+    if (resetMusic) {
+      themeAudio.setAttribute('src', chrome.extension.getURL('wii-shop-theme.ogg'))
+      themeAudio.load()
     }
+    themeAudio.play()
+  } else {
+      themeAudio.pause()
+      if(resetMusic) {
+        themeAudio.removeAttribute('src') // empty source
+        themeAudio.load()
+      }
+  }
 }
 
 function getDomain(tabs) {
@@ -86,7 +96,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
         active: true,
         lastFocusedWindow: true
     }, function(tabs) {
-        checkMusic(tabs)
+        checkMusic(tabs, false)
     })
 })
 
@@ -96,7 +106,7 @@ chrome.tabs.onActivated.addListener(function(activeInfo) {
         active: true,
         lastFocusedWindow: true
     }, function(tabs) {
-        checkMusic(tabs)
+        checkMusic(tabs, false)
     })
 })
 
