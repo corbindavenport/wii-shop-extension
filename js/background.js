@@ -1,6 +1,10 @@
 // The active background music track is stored here instead of themeAudio.src
 var currentMusic = ''
 
+// Used to check if music is already playing or not. This prevents the extention from
+// starting the music over every time you navigate around the shopping site
+var playing = 0
+
 // Set MediaSession API info for Chrome media player popup
 if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
@@ -34,12 +38,24 @@ function checkMusic(tabs) {
     var url = new URL(tabs[0].url)
     var domain = url.hostname.toString().replace('www.', '')
     console.log(domain)
-    if (siteList.includes(domain)) {
-        themeAudio.src = currentMusic
-        themeAudio.play()
-    } else {
-        // The src element is deleted so Chromium browsers won't show a playback notification anymore
-        themeAudio.src = ''
+
+    //On shopping site, plays music
+    if (siteList.includes(domain) && playing == 0) {
+      themeAudio.src = currentMusic
+      themeAudio.play()
+      playing++
+    }
+
+    //While navigating shopping sites, and music is already playing
+    //Do nothing
+    else if (siteList.includes(domain) && playing > 0) {
+    }
+
+    //No longer on shopping site, stops music
+    else {
+      themeAudio.pause()
+      themeAudio.scr = ''
+      playing = 0
     }
 }
 
