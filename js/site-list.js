@@ -67,6 +67,22 @@ const siteList = [
     'marktplaats.nl',
     'matas.dk',
     'mediamarkt.nl',
+    'mercadolibre.com.ar'
+    'mercadolibre.com.bo'
+    'mercadolibre.com.br'
+    'mercadolibre.com.co'
+    'mercadolibre.com.do'
+    'mercadolibre.com.ec'
+    'mercadolibre.com.gt'
+    'mercadolibre.com.hn'
+    'mercadolibre.com.mx'
+    'mercadolibre.com.ni'
+    'mercadolibre.com.pa'
+    'mercadolibre.com.pe'
+    'mercadolibre.com.py'
+    'mercadolibre.com.sv'
+    'mercadolibre.com.uy'
+    'mercadolibre.com.ve'
     'microcenter.com',
     'momoshop.com.tw',
     'nemlig.com',
