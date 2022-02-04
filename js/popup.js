@@ -5,17 +5,25 @@ document.querySelector('#music-picker').addEventListener('change', function () {
     })
 })
 
+document.querySelector("#music-volume").addEventListener("mouseup", function () {
+    chrome.storage.local.set({
+        volume: document.querySelector("#music-volume").value
+    })
+})
+
 // Get stored settings
-chrome.storage.local.get({
-    music: 'wii-shop-theme',
-    musicEnabled: 'true'
-}, function (data) {
+chrome.storage.local.get([
+    "music",
+    "musicEnabled",
+    "volume"
+], function (data) {
     document.querySelector('#music-picker').value = data.music
     if (data.musicEnabled) {
         document.getElementById('music-toggle').innerText = 'Turn off background music'
     } else {
         document.getElementById('music-toggle').innerText = 'Turn on background music'
     }
+    document.getElementById("music-volume").value = data.volume
 })
 
 // Music on/off button
