@@ -9,7 +9,7 @@ if ('mediaSession' in navigator) {
     })
 }
 
-// Creat audio object
+// Create audio object
 var themeAudio = new Audio()
 themeAudio.volume = 0.5
 themeAudio.loop = true
