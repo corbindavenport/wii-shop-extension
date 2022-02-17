@@ -427,6 +427,12 @@ telekom.sk
 tesco.com
 tesco.com
 teufel.de
+tiendamia.com/ar
+tiendamia.com/br
+tiendamia.com/cr
+tiendamia.com/ec
+tiendamia.com/pe
+tiendamia.com/uy
 thalia.at
 thalia.de
 tower.jp
