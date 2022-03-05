@@ -57,8 +57,10 @@ chrome.storage.onChanged.addListener(function (changes, area) {
     }
     if (changes.musicEnabled) {
         musicEnabled = changes.musicEnabled.newValue
-        if (!changes.musicEnabled) {
+        if (!musicEnabled) {
             themeAudio.src = ''
+        } else {
+            chrome.tabs.query({active: true, lastFocusedWindow: true}, checkMusic);
         }
     }
     if (changes.music) {
