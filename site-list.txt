@@ -490,10 +490,8 @@ zattini.com.br
 zehrs.ca
 zenmarket.jp
 zooplus.de
-aliexpress.com
 leclercdrive.fr
 auchan.fr
-rakuten.com
 laredoute.fr
 manomano.fr
 decathlon.fr
@@ -512,5 +510,4 @@ piecesauto24.com
 zalando.fr
 conforama.fr
 trivago.fr
-spartoo.com
 pixmania.fr
