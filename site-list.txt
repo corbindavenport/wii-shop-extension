@@ -1415,6 +1415,11 @@ vietnam.craigslist.org
 villman.com
 vinted.fr
 virgin.craigslist.org
+virginmegastore.ae
+virginmegastore.com
+virginmegastore.com.kw
+virginmegastore.qa
+virginmegastore.sa
 visalia.craigslist.org
 vvstore.jp
 waco.craigslist.org
