@@ -834,7 +834,6 @@ mg.co.id
 miami.craigslist.org
 microcenter.com
 micronesia.craigslist.org
-microsoft.com
 microspot.ch
 mightyape.co.nz
 milwaukee.craigslist.org
