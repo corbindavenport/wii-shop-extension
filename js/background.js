@@ -76,14 +76,20 @@ chrome.storage.onChanged.addListener(function (changes, area) {
 // Function for checking if music should be playing in current tab
 function checkMusic(tabs) {
     var url = tabs[0].url;
+    // Don't play on browser/internal pages
     if (!url.startsWith('http')) {
         themeAudio.src = ''
         return;
     }
+    // Don't play on Amazon Prime Video
+    if (url.includes('amazon') && url.includes('gp/video')) {
+        themeAudio.src = ''
+        return;
+    }
+    // Continue with playback
     var url = new URL(url)
     var domain = url.hostname.toString().replace('www.', '')
-    
-    var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''));
+    var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
     if (siteList.includes(domain)
         && !sitesToIgnore.includes(domain)
         && musicEnabled
