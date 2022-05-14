@@ -1,6 +1,17 @@
-html,
-body {
+html,body {
     min-width: 300px;
+}
+
+/* This fixes the browser action popup from being too wide on Firefox, but still use full-width on the in-browser settings panel */
+@-moz-document url-prefix() {
+        html,body {
+            max-width: 300px;
+        }
+        @media (min-width: 301px) {
+            html,body {
+                max-width: none;
+            }
+        }
 }
 
 select {
