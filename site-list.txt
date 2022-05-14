@@ -11,6 +11,7 @@ abilene.craigslist.org
 aboutyou.de
 accra.craigslist.org
 acehardware.com
+adafruit.com
 addisababa.craigslist.org
 adidas.de
 adlandpro.com
@@ -225,6 +226,7 @@ carsome.id
 casablanca.craigslist.org
 casasbahia.com.br
 caseking.de
+castlemaniagames.com
 castorama.pl
 catskills.craigslist.org
 cb2.com
@@ -274,6 +276,7 @@ compumundo.com.ar
 computeruniverse.de
 conforama.fr
 conrad.de
+console5.com
 converse.com
 cookeville.craigslist.org
 coolblue.nl
@@ -325,6 +328,7 @@ detroit.craigslist.org
 dickssportinggoods.com
 diecastmodels.co.nz
 digicodes.net
+digikey.com
 digitec.ch
 dillards.com
 dior.com
@@ -343,6 +347,7 @@ douglas.de
 dressbarn.com
 dresslink.com
 drmartens.com
+drop.com
 drsquatch.com
 dtlr.com
 dubai.craigslist.org
@@ -653,6 +658,7 @@ kathmandu.co.nz
 kaufland.de
 kenai.craigslist.org
 kenya.craigslist.org
+keyboardco.com
 keys.craigslist.org
 kfzteile24.de
 killeen.craigslist.org
@@ -748,6 +754,7 @@ logan.craigslist.org
 loire.craigslist.org
 lojasrenner.com.br
 longisland.craigslist.org
+longislandwatch.com
 lookfantastic.com
 losangeles.craigslist.org
 louisville.craigslist.org
@@ -758,6 +765,7 @@ loz.craigslist.org
 lttstore.com
 lubbock.craigslist.org
 luluhypermarket.com
+lunashops.com
 luxembourg.craigslist.org
 lynchburg.craigslist.org
 lyon.craigslist.org
@@ -789,10 +797,12 @@ masoncity.craigslist.org
 matahari.com
 matas.dk
 materiel.net
+matias.store
 mattoon.craigslist.org
 maurices.com
 mcallen.craigslist.org
 meadville.craigslist.org
+mechanicalkeyboards.com
 medford.craigslist.org
 mediaexpert.pl
 mediamarkt.de
@@ -1004,6 +1014,7 @@ pchome.co.th
 pchome.com.tw
 pchomeec.tw
 pchubpricelist.online
+pckeyboard.com
 pcone.com.tw
 pcx.com.ph
 pegipegi.com
@@ -1277,6 +1288,7 @@ stjoseph.craigslist.org
 stlouis.craigslist.org
 stockton.craigslist.org
 stokesstores.com
+stoneagegamer.com
 stopandshop.com
 store.acer.com
 store.arduino.cc
@@ -1307,6 +1319,7 @@ susanville.craigslist.org
 swappa.com
 swatch.com
 sweelee.co.id
+sweetwater.com
 swks.craigslist.org
 swmi.craigslist.org
 swv.craigslist.org
@@ -1346,6 +1359,8 @@ thepremierstore.com
 therealreal.com
 thewarehouse.co.nz
 thirddayco.com
+thomann.de
+thomannmusic.com
 thumb.craigslist.org
 tienda.falabella.com
 tienda.falabella.com.ar
