@@ -1,6 +1,7 @@
 123ink.ca
 1800flowers.com
 24h.pchome.com.tw
+2dehands.be
 6pm.com
 7-eleven.com
 7net.omni7.jp
@@ -263,6 +264,7 @@ clovis.craigslist.org
 cncpts.com
 cnj.craigslist.org
 coachoutlet.com
+coinshopgroup.com
 coleman.com
 collegestation.craigslist.org
 colombia.craigslist.org
@@ -416,6 +418,7 @@ etmall.com.tw
 etsy.com
 eugene.craigslist.org
 euro.com.pl
+eurocoinhouse.com
 euronics.de
 evansville.craigslist.org
 event.rakuten.co.jp
@@ -482,6 +485,7 @@ galeria.de
 galveston.craigslist.org
 gamers.co.jp
 gamestop.com
+gamesenco.com
 gamma.nl
 gap.com
 gapcanada.ca
@@ -533,6 +537,7 @@ heb.com
 helena.craigslist.org
 hema.com
 hema.nl
+herdenkingsmunten.be
 hermes.com
 herschel.com
 hickory.craigslist.org
@@ -1274,6 +1279,7 @@ spokane.craigslist.org
 springfield.craigslist.org
 springfieldil.craigslist.org
 stampinup.com
+standaardboekhandel.be
 staples.ca
 staples.com
 startech.com.bd
@@ -1306,6 +1312,7 @@ store.usgs.gov
 store.warnermusic.com
 stpetersburg.craigslist.org
 strasbourg.craigslist.org
+studieshop.be
 submarino.com.br
 suitsupply.com
 summitracing.com
@@ -1354,6 +1361,7 @@ texoma.craigslist.org
 thalia.at
 thalia.de
 thebay.com
+thegames.be
 themarket.com
 thepremierstore.com
 therealreal.com
