@@ -13,6 +13,7 @@ fetch(chrome.extension.getURL('site-list.txt')).then(function (response) {
 // The active background music track is stored here instead of themeAudio.src
 var currentMusic = ''
 var musicEnabled = true
+var includedSites = '';
 var excludedSites = '';
 
 async function createMediaSession() {
@@ -47,6 +48,7 @@ chrome.storage.local.get({
     console.log('Music enabled:', data.musicEnabled)
     musicEnabled = data.musicEnabled
     themeAudio.volume = data.volume
+    includedSites = data.includedSites;
     excludedSites = data.excludedSites
 })
 
@@ -67,6 +69,9 @@ chrome.storage.onChanged.addListener(function (changes, area) {
             themeAudio.src = chrome.extension.getURL('music/' + changes.music.newValue + '.ogg')
             themeAudio.play()
         }
+    }
+    if (changes.includedSites) {
+        includedSites = changes.includedSites.newValue;
     }
     if (changes.excludedSites) {
         excludedSites = changes.excludedSites.newValue;
@@ -89,8 +94,11 @@ function checkMusic(tabs) {
     // Continue with playback
     var url = new URL(url)
     var domain = url.hostname.toString().replace('www.', '')
+    var sitesToAdd = includedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
     var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
-    if (siteList.includes(domain)
+
+    if ((siteList.includes(domain) 
+        || sitesToAdd.includes(domain))
         && !sitesToIgnore.includes(domain)
         && musicEnabled
     ) {
