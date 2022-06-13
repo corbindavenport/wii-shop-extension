@@ -1222,6 +1222,7 @@ shopee.co.id
 shopee.co.th
 shopee.com.br
 shopee.ph
+shopee.pl
 shopee.tw
 shopgoodwill.com
 shopinbit.de
@@ -1428,6 +1429,7 @@ victoriatx.craigslist.org
 vietnam.craigslist.org
 villman.com
 vinted.fr
+vinted.pl
 virgin.craigslist.org
 virginmegastore.ae
 virginmegastore.com
