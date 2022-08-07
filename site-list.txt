@@ -1300,6 +1300,7 @@ store.arduino.cc
 store.bricklink.com
 store.elementary.io
 store.epicgames.com
+store.google.com
 store.hypixel.net
 store.insta360.com
 store.linefriends.com
