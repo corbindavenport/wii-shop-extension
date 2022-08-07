@@ -185,6 +185,7 @@ brack.ch
 brainerd.craigslist.org
 brasilia.craigslist.org
 bricklink.com
+brickowl.com
 brooklinen.com
 brownsville.craigslist.org
 brunswick.craigslist.org
@@ -259,6 +260,7 @@ chipart.com.br
 chipotle.com
 chloe.com
 christchurch.craigslist.org
+chrome.google.com
 cincinnati.craigslist.org
 citymarket.com
 clarksville.craigslist.org
@@ -1295,6 +1297,7 @@ stoneagegamer.com
 stopandshop.com
 store.acer.com
 store.arduino.cc
+store.bricklink.com
 store.elementary.io
 store.epicgames.com
 store.hypixel.net
