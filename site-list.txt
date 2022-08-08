@@ -1292,6 +1292,7 @@ stopandshop.com
 store.acer.com
 store.arduino.cc
 store.elementary.io
+store.google.com
 store.epicgames.com
 store.hypixel.net
 store.insta360.com
