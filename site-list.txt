@@ -326,6 +326,7 @@ decathlon.pl
 decatur.craigslist.org
 dekudeals.com
 delaware.craigslist.org
+deliveroo.fr
 dell.com
 delrio.craigslist.org
 dengekiya.com
@@ -655,6 +656,7 @@ jp.mercari.com
 jualo.com
 jula.pl
 juneau.craigslist.org
+just-eat.fr
 justjeans.co.nz
 jxn.craigslist.org
 jysk.de
@@ -722,6 +724,7 @@ ldlc.com
 leboncoin.fr
 leclercdrive.fr
 lego.com
+le-kiosque-a-pizzas.com
 letgo.com
 levi.com
 lewiston.craigslist.org
