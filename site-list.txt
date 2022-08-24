@@ -160,6 +160,7 @@ bismarck.craigslist.org
 blacksburg.craigslist.org
 blibli.com
 bloomington.craigslist.org
+blomqvist.no
 bn.craigslist.org
 boden.co.uk
 boise.craigslist.org
@@ -260,6 +261,7 @@ christchurch.craigslist.org
 cincinnati.craigslist.org
 citymarket.com
 clarksville.craigslist.org
+clasohlson.com
 cleveland.craigslist.org
 clovis.craigslist.org
 cncpts.com
@@ -359,6 +361,7 @@ duluth.craigslist.org
 dunkinathome.com
 dunkindonuts.com
 dustin.no
+dustinhome.no
 e-onkyo.com
 e.leclerc
 eastco.craigslist.org
@@ -673,6 +676,7 @@ kinguin.net
 kinokuniya.com
 kinokuniya.com.tw
 kirksville.craigslist.org
+kjell.com
 klamath.craigslist.org
 klikindomaret.com
 kliknklik.com
