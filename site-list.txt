@@ -1123,6 +1123,7 @@ reiss.com
 rennes.craigslist.org
 reno.craigslist.org
 reserved.com
+retroflag.com
 reuter.de
 reverb.com
 reykjavik.craigslist.org
@@ -1330,7 +1331,6 @@ t-mobile.pl
 taaze.tw
 taiwanbar.cc
 takealot.com
-takealot.com
 tallahassee.craigslist.org
 tampa.craigslist.org
 taniaksiazka.pl
@@ -1503,3 +1503,18 @@ zehrs.ca
 zenmarket.jp
 zooplus.de
 zooplus.fr
+wemakeprice.com
+interpark.com
+11st.co.kr
+gmarket.co.kr
+auction.co.kr
+ssg.com
+homeplus.co.kr
+vogoplay.co.kr
+smartstore.naver.com
+nsmall.com
+halfclub.com
+lotteon.com
+1300k.com
+tmon.co.kr
+qoo10.com
