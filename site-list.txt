@@ -308,6 +308,7 @@ crocs.com
 csd.craigslist.org
 cultura.com
 curitiba.craigslist.org
+curiada.com
 currys.co.uk
 cuyana.com
 cyberport.de
@@ -491,6 +492,7 @@ fabric.com
 fairbanks.craigslist.org
 falabella.com
 falabella.com.ar
+fanatical.com
 farfetch.com
 fargo.craigslist.org
 farmers.co.nz
@@ -1527,6 +1529,7 @@ watertown.craigslist.org
 wausau.craigslist.org
 wayfair.ca
 wayfair.com
+webstaurantstore.com
 webstore.com.br
 wellington.craigslist.org
 wenatchee.craigslist.org
