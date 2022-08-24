@@ -1122,6 +1122,7 @@ reiss.com
 rennes.craigslist.org
 reno.craigslist.org
 reserved.com
+retroflag.com
 reuter.de
 reverb.com
 reykjavik.craigslist.org
@@ -1328,7 +1329,6 @@ system76.com
 t-mobile.pl
 taaze.tw
 taiwanbar.cc
-takealot.com
 takealot.com
 tallahassee.craigslist.org
 tampa.craigslist.org
