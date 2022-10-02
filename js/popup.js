@@ -5,20 +5,20 @@ if (!document.location.href.includes('source=action')) {
 
 // Save settings
 document.querySelector('#music-picker').addEventListener('change', function () {
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
         music: document.querySelector('#music-picker').value
     })
 })
 
 // Save volume
 document.querySelector('#music-volume').addEventListener('change', function () {
-    chrome.storage.sync.set({
+    chrome.storage.local.set({
         volume: document.querySelector('#music-volume').value / 100
     })
 })
 
 // Get stored settings
-chrome.storage.sync.get({
+chrome.storage.local.get({
     music: 'wii-shop-theme',
     musicEnabled: 'true',
     volume: 0.5,
@@ -35,20 +35,20 @@ chrome.storage.sync.get({
 
 // Music on/off button
 document.getElementById('music-toggle').addEventListener('click', function () {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
         musicEnabled: true
     }, function (data) {
         console.log(data)
         if (data.musicEnabled) {
             // Turn off music
             document.getElementById('music-toggle').innerText = 'Turn on background music'
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 musicEnabled: false
             })
         } else {
             // Turn on music
             document.getElementById('music-toggle').innerText = 'Turn off background music'
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 musicEnabled: true
             })
         }
@@ -57,7 +57,7 @@ document.getElementById('music-toggle').addEventListener('click', function () {
 
 // Exclude button
 document.getElementById('exclude-button').addEventListener('click', function () {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
         excludedSites: ''
     }, function (data) {
         var splitData = data.excludedSites.split('\n');
@@ -76,7 +76,7 @@ document.getElementById('exclude-button').addEventListener('click', function () 
             }
 
             var updatedExcludedSites = data.excludedSites + '\n' + domainToAdd;
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 excludedSites: updatedExcludedSites
             })
             document.getElementById('exclude-button').innerText = "Excluded " + domainToAdd + "!"

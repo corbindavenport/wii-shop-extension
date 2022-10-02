@@ -1,19 +1,34 @@
-// Get list of matching domains from site-list.txt
-var siteList = []
-fetch(chrome.extension.getURL('site-list.txt')).then(function (response) {
-    response.text().then(function (text) {
-        siteList = text
-            .split('\n')
-            .map(s => s.replace('\r', '')) //handles Windows newline formatting if necessary
-        // Print list of sites
-        console.log('Loaded list of sites:', siteList)
-    })
-})
-
-// The active background music track is stored here instead of themeAudio.src
-var currentMusic = ''
+// Global variables
+var globalSiteList = []
+var currentMusic = '' // The active background music track is stored here instead of themeAudio.src
 var musicEnabled = true
 var excludedSites = '';
+
+// Function for updating list of shopping sites
+async function getShopList() {
+    console.log('Updating site list...')
+    var dataList = []
+    var req = await fetch('https://cdn.jsdelivr.net/gh/corbindavenport/shop-list/list.txt').catch(cacheError)
+    // Parse data
+    var text = await req.text()
+    try {
+        dataList = text.split('\n')
+    } catch(e) {
+        console.error('Error parsing shop list:', e)
+        return false
+    }
+    console.log('Loaded site list:', dataList)
+    // Save data to storage
+    globalSiteList = dataList
+    chrome.storage.local.set({
+        siteList: dataList
+    })
+}
+
+// Function for catching errors on list update
+function cacheError(e) {
+    console.error('Error updating shop list:', e)
+}
 
 async function createMediaSession() {
     navigator.mediaSession.metadata = new MediaMetadata({
@@ -41,13 +56,19 @@ chrome.storage.local.get({
     music: 'wii-shop-theme',
     musicEnabled: true,
     volume: 0.5,
-    excludedSites: ''
+    excludedSites: '',
+    siteList: []
 }, function (data) {
     currentMusic = chrome.extension.getURL('music/' + data.music + '.ogg')
     console.log('Music enabled:', data.musicEnabled)
     musicEnabled = data.musicEnabled
     themeAudio.volume = data.volume
     excludedSites = data.excludedSites
+    if (data.siteList.length === 0) {
+        getShopList()
+    } else {
+        globalSiteList = data.siteList
+    }
 })
 
 // Update settings after storage change
@@ -90,7 +111,7 @@ function checkMusic(tabs) {
     var url = new URL(url)
     var domain = url.hostname.toString().replace('www.', '')
     var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
-    if (siteList.includes(domain)
+    if (globalSiteList.includes(domain)
         && !sitesToIgnore.includes(domain)
         && musicEnabled
     ) {
@@ -128,6 +149,11 @@ chrome.runtime.onMessage.addListener(function (request) {
         themeAudio.src = currentMusic
         themeAudio.play()
     }
+})
+
+// Update list of sites when the browser is restarted
+chrome.runtime.onStartup.addListener(function () {
+    getShopList()
 })
 
 // Show notification on extension install
