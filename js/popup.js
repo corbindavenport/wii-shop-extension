@@ -57,7 +57,7 @@ document.getElementById('music-toggle').addEventListener('click', function () {
 
 // Exclude button
 document.getElementById('include-button').addEventListener('click', function () {
-    chrome.storage.sync.get({
+    chrome.storage.local.get({
         includedSites: ''
     }, function (data) {
         var splitData = data.includedSites.split('\n');
@@ -76,7 +76,7 @@ document.getElementById('include-button').addEventListener('click', function () 
             }
 
             var updatedIncludedSites = (data.includedSites.trim().length > 0 ? data.includedSites + '\n' : '') + domainToAdd;
-            chrome.storage.sync.set({
+            chrome.storage.local.set({
                 includedSites: updatedIncludedSites
             })
             document.getElementById('include-button').innerText = "Included " + domainToAdd + "!"

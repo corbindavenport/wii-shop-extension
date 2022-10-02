@@ -1,3 +1,5 @@
+// TODO: Move settings back to chrome.storage.sync and keep cache list in chrome.storage.local
+
 // Global variables
 var globalSiteList = []
 var currentMusic = '' // The active background music track is stored here instead of themeAudio.src
@@ -58,6 +60,7 @@ chrome.storage.local.get({
     musicEnabled: true,
     volume: 0.5,
     excludedSites: '',
+    includedSites: '',
     siteList: []
 }, function (data) {
     currentMusic = chrome.extension.getURL('music/' + data.music + '.ogg')
@@ -117,7 +120,7 @@ function checkMusic(tabs) {
     var domain = url.hostname.toString().replace('www.', '')
     var sitesToAdd = includedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
     var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
-    if (globalSiteList.includes(domain)
+    if ((globalSiteList.includes(domain) || sitesToAdd.includes(domain))
         && !sitesToIgnore.includes(domain)
         && musicEnabled
     ) {

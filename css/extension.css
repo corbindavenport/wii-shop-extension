@@ -49,10 +49,6 @@ select {
     color: green;
 }
 
-#included-sites {
-    resize: none;
-}
-
-#excluded-sites {
+#included-sites, #excluded-sites {
     resize: none;
 }
