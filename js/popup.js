@@ -56,6 +56,35 @@ document.getElementById('music-toggle').addEventListener('click', function () {
 })
 
 // Exclude button
+document.getElementById('include-button').addEventListener('click', function () {
+    chrome.storage.sync.get({
+        includedSites: ''
+    }, function (data) {
+        var splitData = data.includedSites.split('\n');
+        var cleanedList = splitData.map(s => s.trim().toLowerCase());
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            var url = tabs[0].url;
+            if (!url.startsWith('http')) {
+                document.getElementById('include-button').innerText = "Invalid site."
+                return;
+            }
+            var url = new URL(url)
+            var domainToAdd = url.hostname.toString().replace('www.', '')
+            if (cleanedList.includes(domainToAdd)) {
+                document.getElementById('include-button').innerText = 'Site already included!'
+                return;
+            }
+
+            var updatedIncludedSites = (data.includedSites.trim().length > 0 ? data.includedSites + '\n' : '') + domainToAdd;
+            chrome.storage.sync.set({
+                includedSites: updatedIncludedSites
+            })
+            document.getElementById('include-button').innerText = "Included " + domainToAdd + "!"
+        })
+    })
+})
+
+// Exclude button
 document.getElementById('exclude-button').addEventListener('click', function () {
     chrome.storage.local.get({
         excludedSites: ''
@@ -75,7 +104,7 @@ document.getElementById('exclude-button').addEventListener('click', function () 
                 return;
             }
 
-            var updatedExcludedSites = data.excludedSites + '\n' + domainToAdd;
+            var updatedExcludedSites = (data.excludedSites.trim().length > 0 ? data.excludedSites + '\n' : '') + domainToAdd;
             chrome.storage.local.set({
                 excludedSites: updatedExcludedSites
             })

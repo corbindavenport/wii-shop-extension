@@ -2,6 +2,7 @@
 var globalSiteList = []
 var currentMusic = '' // The active background music track is stored here instead of themeAudio.src
 var musicEnabled = true
+var includedSites = '';
 var excludedSites = '';
 
 // Function for updating list of shopping sites
@@ -63,6 +64,7 @@ chrome.storage.local.get({
     console.log('Music enabled:', data.musicEnabled)
     musicEnabled = data.musicEnabled
     themeAudio.volume = data.volume
+    includedSites = data.includedSites;
     excludedSites = data.excludedSites
     if (data.siteList.length === 0) {
         getShopList()
@@ -89,6 +91,9 @@ chrome.storage.onChanged.addListener(function (changes, area) {
             themeAudio.play()
         }
     }
+    if (changes.includedSites) {
+        includedSites = changes.includedSites.newValue;
+    }
     if (changes.excludedSites) {
         excludedSites = changes.excludedSites.newValue;
     }
@@ -110,6 +115,7 @@ function checkMusic(tabs) {
     // Continue with playback
     var url = new URL(url)
     var domain = url.hostname.toString().replace('www.', '')
+    var sitesToAdd = includedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
     var sitesToIgnore = excludedSites.split('\n').map(s => s.toLowerCase().replace('www.', ''))
     if (globalSiteList.includes(domain)
         && !sitesToIgnore.includes(domain)
