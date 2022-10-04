@@ -11,11 +11,13 @@ document.querySelector('#music-picker').addEventListener('change', function () {
 })
 
 // Save volume
-document.querySelector('#music-volume').addEventListener('change', function () {
+function updateVolume() {
     chrome.storage.local.set({
         volume: document.querySelector('#music-volume').value / 100
     })
-})
+}
+document.querySelector('#music-volume').addEventListener('change', updateVolume)
+document.querySelector('#music-volume').addEventListener('input', updateVolume)
 
 // Get stored settings
 chrome.storage.local.get({
