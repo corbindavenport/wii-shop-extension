@@ -1,5 +1,3 @@
-// TODO: Move settings back to chrome.storage.sync and keep cache list in chrome.storage.local
-
 // Global variables
 var globalSiteList = []
 var currentMusic = '' // The active background music track is stored here instead of themeAudio.src
@@ -55,13 +53,12 @@ themeAudio.volume = 0
 themeAudio.loop = true
 
 // Get stored settings
-chrome.storage.local.get({
+chrome.storage.sync.get({
     music: 'wii-shop-theme',
     musicEnabled: true,
     volume: 0.5,
     excludedSites: '',
-    includedSites: '',
-    siteList: []
+    includedSites: ''
 }, function (data) {
     currentMusic = chrome.extension.getURL('music/' + data.music + '.ogg')
     console.log('Music enabled:', data.musicEnabled)
@@ -69,6 +66,12 @@ chrome.storage.local.get({
     themeAudio.volume = data.volume
     includedSites = data.includedSites;
     excludedSites = data.excludedSites
+})
+
+// Get site list from local storage
+chrome.storage.local.get({
+    siteList: []
+}, function (data) {
     if (data.siteList.length === 0) {
         getShopList()
     } else {

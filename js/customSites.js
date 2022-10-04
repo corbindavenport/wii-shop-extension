@@ -1,4 +1,4 @@
-chrome.storage.local.get({
+chrome.storage.sync.get({
     includedSites: '',
     excludedSites: ''
 }, function (data) {
@@ -7,7 +7,7 @@ chrome.storage.local.get({
 })
 
 document.querySelector('#save-changes-button').addEventListener('click', function () {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         includedSites: document.querySelector('#included-sites').value,
         excludedSites: document.querySelector('#excluded-sites').value
     })

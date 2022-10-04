@@ -5,20 +5,20 @@ if (!document.location.href.includes('source=action')) {
 
 // Save settings
 document.querySelector('#music-picker').addEventListener('change', function () {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         music: document.querySelector('#music-picker').value
     })
 })
 
 // Save volume
 document.querySelector('#music-volume').addEventListener('change', function () {
-    chrome.storage.local.set({
+    chrome.storage.sync.set({
         volume: document.querySelector('#music-volume').value / 100
     })
 })
 
 // Get stored settings
-chrome.storage.local.get({
+chrome.storage.sync.get({
     music: 'wii-shop-theme',
     musicEnabled: 'true',
     volume: 0.5,
@@ -35,20 +35,20 @@ chrome.storage.local.get({
 
 // Music on/off button
 document.getElementById('music-toggle').addEventListener('click', function () {
-    chrome.storage.local.get({
+    chrome.storage.sync.get({
         musicEnabled: true
     }, function (data) {
         console.log(data)
         if (data.musicEnabled) {
             // Turn off music
             document.getElementById('music-toggle').innerText = 'Turn on background music'
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
                 musicEnabled: false
             })
         } else {
             // Turn on music
             document.getElementById('music-toggle').innerText = 'Turn off background music'
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
                 musicEnabled: true
             })
         }
@@ -57,7 +57,7 @@ document.getElementById('music-toggle').addEventListener('click', function () {
 
 // Exclude button
 document.getElementById('include-button').addEventListener('click', function () {
-    chrome.storage.local.get({
+    chrome.storage.sync.get({
         includedSites: ''
     }, function (data) {
         var splitData = data.includedSites.split('\n');
@@ -76,7 +76,7 @@ document.getElementById('include-button').addEventListener('click', function () 
             }
 
             var updatedIncludedSites = (data.includedSites.trim().length > 0 ? data.includedSites + '\n' : '') + domainToAdd;
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
                 includedSites: updatedIncludedSites
             })
             document.getElementById('include-button').innerText = "Included " + domainToAdd + "!"
@@ -86,7 +86,7 @@ document.getElementById('include-button').addEventListener('click', function () 
 
 // Exclude button
 document.getElementById('exclude-button').addEventListener('click', function () {
-    chrome.storage.local.get({
+    chrome.storage.sync.get({
         excludedSites: ''
     }, function (data) {
         var splitData = data.excludedSites.split('\n');
@@ -105,7 +105,7 @@ document.getElementById('exclude-button').addEventListener('click', function () 
             }
 
             var updatedExcludedSites = (data.excludedSites.trim().length > 0 ? data.excludedSites + '\n' : '') + domainToAdd;
-            chrome.storage.local.set({
+            chrome.storage.sync.set({
                 excludedSites: updatedExcludedSites
             })
             document.getElementById('exclude-button').innerText = "Excluded " + domainToAdd + "!"
