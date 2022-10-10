@@ -148,6 +148,7 @@ bham.craigslist.org
 bhinneka.com
 bhldn.com
 bhphotovideo.com
+biccamera.com
 bigbend.craigslist.org
 biggo.com.tw
 biglots.com
@@ -674,6 +675,7 @@ itch.io
 item.rakuten.co.jp
 itemku.com
 ithaca.craigslist.org
+ja.aliexpress.com
 jackson.craigslist.org
 jacksontn.craigslist.org
 jacksonville.craigslist.org
@@ -1552,6 +1554,7 @@ worldmarket.com
 worldofsweets.de
 wowcher.co.uk
 wv.craigslist.org
+www.biccamera.com
 www.ewtnreligiouscatalogue.com
 www2.hm.com
 wyoming.craigslist.org
