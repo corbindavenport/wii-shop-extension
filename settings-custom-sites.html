@@ -12,12 +12,15 @@
 <body>
     <div class="container-fluid">
         <button class="btn btn-sm btn-wii mt-3 w-100" id="go-back">Return to Settings</button>
+
+        <label for="included-sites" class="mt-2 form-label">Custom sites (one per line)</label>
+        <textarea class="form-control" id="included-sites" class="w-100" rows="7"></textarea>
         <label for="excluded-sites" class="mt-2 form-label">Excluded sites (one per line)</label>
-        <textarea class="form-control" id="excluded-sites" class="w-100" rows="10"></textarea>
+        <textarea class="form-control" id="excluded-sites" class="w-100" rows="7"></textarea>
         <button class="btn btn-sm btn-wii mt-3 mb-3 w-100" id="save-changes-button">Save Changes</button>
     </div>
 
-    <script src="js/exclusions.js"></script>
+    <script src="js/customSites.js"></script>
 
 </body>
 
