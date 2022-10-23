@@ -162,6 +162,8 @@ chrome.runtime.onMessage.addListener(function (request) {
     } else if (request === 'play') {
         themeAudio.src = currentMusic
         themeAudio.play()
+    } else if (request == 'updateList') {
+        getShopList()
     }
 })
 

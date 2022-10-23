@@ -115,11 +115,9 @@ document.getElementById('exclude-button').addEventListener('click', function () 
     })
 })
 
-// Button link functionality
-document.querySelectorAll('button[data-link]').forEach(function (el) {
-    el.addEventListener('click', function () {
-        chrome.tabs.create({ url: el.getAttribute('data-link') })
-    })
+// Update list button
+document.getElementById('update-button').addEventListener('click', function () {
+    chrome.runtime.sendMessage('updateList')
 })
 
 // Pause music when page closes
