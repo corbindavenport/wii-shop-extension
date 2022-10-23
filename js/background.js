@@ -14,7 +14,7 @@ async function getShopList() {
     var text = await req.text()
     try {
         dataList = text.split('\n')
-    } catch(e) {
+    } catch (e) {
         console.error('Error parsing shop list:', e)
         return false
     }
@@ -89,7 +89,7 @@ chrome.storage.onChanged.addListener(function (changes, area) {
         if (!musicEnabled) {
             themeAudio.src = ''
         } else {
-            chrome.tabs.query({active: true, lastFocusedWindow: true}, checkMusic);
+            chrome.tabs.query({ active: true, lastFocusedWindow: true }, checkMusic);
         }
     }
     if (changes.music) {
@@ -177,37 +177,16 @@ chrome.runtime.onInstalled.addListener(function () {
     // Set most options
     var data = {
         'type': 'basic',
+        'message': 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings, or click this notification.',
         'iconUrl': chrome.extension.getURL('img/icon128.png'),
         'title': 'Wii Shop Music extension installed!',
     }
     // Set message and handlers for notification
-    if (navigator.userAgent.includes("Firefox")) {
-        // Firefox supports does not support buttons in notifications
-        data.message = 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings, or click this notification.'
-        handleNotif = function (id) {
-            chrome.notifications.onClicked.addListener(function (id) {
-                browser.runtime.openOptionsPage();
-            })
-        }
-    } else {
-        // Chromium browsers don't support openPopup(), but do support a button
-        data.message = 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings at any time.'
-        data.buttons = [{
-            title: 'Open settings'
-        },
-        {
-            title: 'Join Discord'
-        }
-        ]
-        handleNotif = function (id) {
-            chrome.notifications.onButtonClicked.addListener(function (id, i) {
-                if (i === 0) {
-                    chrome.runtime.openOptionsPage();
-                } else if (i === 1) {
-                    chrome.tabs.create({ url: 'https://discord.com/invite/59wfy5cNHw' })
-                }
-            })
-        }
+    data.message = 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings, or click this notification.'
+    handleNotif = function (id) {
+        chrome.notifications.onClicked.addListener(function (id) {
+            chrome.runtime.openOptionsPage();
+        })
     }
     // Display the notification
     chrome.notifications.create(data, handleNotif)

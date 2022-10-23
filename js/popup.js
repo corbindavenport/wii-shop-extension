@@ -118,6 +118,7 @@ document.getElementById('exclude-button').addEventListener('click', function () 
 // Update list button
 document.getElementById('update-button').addEventListener('click', function () {
     chrome.runtime.sendMessage('updateList')
+    document.getElementById('update-button').innerText = "Updated!"
 })
 
 // Pause music when page closes
