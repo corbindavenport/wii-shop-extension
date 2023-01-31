@@ -121,6 +121,21 @@ document.getElementById('update-button').addEventListener('click', function () {
     document.getElementById('update-button').innerText = "Updated!"
 })
 
+// Dark mode button
+document.getElementById("dark-button").addEventListener('click', function () {
+    console.log("Clicked!");
+    const body = document.querySelector(".container-fluid");
+    const buttons = document.querySelectorAll("button");
+    const musicList = document.querySelector("select");
+
+    body.classList.toggle("dark-style");
+    buttons.forEach((button) => {
+        button.classList.toggle("dark-style-button");
+        button.classList.toggle("btn-wii");
+    });
+    musicList.classList.toggle("dark-style-music");
+})
+
 // Pause music when page closes
 // This only works on the popup opened from the notification, not the browserAction button
 window.addEventListener("beforeunload", function (e) {

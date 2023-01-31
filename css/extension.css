@@ -52,3 +52,19 @@ select {
 #included-sites, #excluded-sites {
     resize: none;
 }
+
+.dark-style {
+    background-color: #171717;
+    color: white;
+}
+
+.dark-style-button {
+    background-color: #444444;
+    border: 1px solid #34bfed;
+    color: white;
+}
+
+.dark-style-music {
+    background-color: #444444;
+    color: white;
+}
