@@ -1,14 +1,16 @@
-html,body {
+html, body {
+    --blue: #34bfed;
+    --green: #63ED35;
     min-width: 300px;
 }
 
 /* This fixes the browser action popup from being too wide on Firefox, but still use full-width on the in-browser settings panel */
 @-moz-document url-prefix() {
-        html,body {
+        html, body {
             max-width: 300px;
         }
         @media (min-width: 301px) {
-            html,body {
+            html, body {
                 max-width: none;
             }
         }
@@ -18,7 +20,7 @@ select {
     overflow: auto;
 }
 
-.btn-wii {
+.btn-wii, .btn-wii:active, select {
     background: linear-gradient(
         to bottom,
         #f5fafe 0%,
@@ -28,25 +30,15 @@ select {
         #e7f2f6 89%,
         #e4f0f3 93%,
         #ddeff0 100%
-    );
-    border: 1px solid #34bfed;
+    ) !important;
 }
 
-.btn-wii:active {
-    background: linear-gradient(
-        to top,
-        #f5fafe 0%,
-        #fdfdfe 7%,
-        #f2fdff 81%,
-        #e8f3f8 86%,
-        #e7f2f6 89%,
-        #e4f0f3 93%,
-        #ddeff0 100%
-    );
+.btn-wii, select {
+    border: 1px solid var(--blue) !important;
 }
 
 .text-success {
-    color: green;
+    color: var(--green);
 }
 
 #included-sites, #excluded-sites {
