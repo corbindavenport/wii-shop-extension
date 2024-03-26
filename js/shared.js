@@ -1,3 +1,5 @@
+// This is code that can be shared across the background page in Firefox and the offscreen page in Chromium browsers
+
 // Global variables
 var globalSiteList = []
 var currentMusic = '' // The active background music track is stored here instead of themeAudio.src
@@ -170,24 +172,4 @@ chrome.runtime.onMessage.addListener(function (request) {
 // Update list of sites when the browser is restarted
 chrome.runtime.onStartup.addListener(function () {
     getShopList()
-})
-
-// Show notification on extension install
-chrome.runtime.onInstalled.addListener(function () {
-    // Set most options
-    var data = {
-        'type': 'basic',
-        'message': 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings, or click this notification.',
-        'iconUrl': chrome.extension.getURL('img/icon128.png'),
-        'title': 'Wii Shop Music extension installed!',
-    }
-    // Set message and handlers for notification
-    data.message = 'The Wii Shop theme will now play when you visit shopping websites. Click the toolbar button to change settings, or click this notification.'
-    handleNotif = function (id) {
-        chrome.notifications.onClicked.addListener(function (id) {
-            chrome.runtime.openOptionsPage();
-        })
-    }
-    // Display the notification
-    chrome.notifications.create(data, handleNotif)
 })
